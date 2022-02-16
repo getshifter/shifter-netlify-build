@@ -24,3 +24,10 @@ tl;dr: You have to set up both a Netlify and a Shifter site. They interact and c
 This process does 2 things. First, it sets up a Netlify site with the required build settings and redirects. Those settings are located within the `netlify.toml` file and `build.sh`.
 
 This is the most basic version of a deploy pipeline between Shifter and Netlify.
+
+## Search & Replace URLs
+
+Using sed
+```
+LC_ALL=C find . -type f -exec sed -i '' -e "s/foo-bar-baz.on.getshifter.io/foo-bar-baz.netlify.app/" {} \;
+```
